@@ -3,62 +3,66 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Thompsons For Travel – FreshChat Widget Options</title>
+<title>Thompsons For Travel — FreshChat Widget Options — Version B</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: #dde8f4; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; padding: 2rem; }
   .page-title { text-align: center; font-size: 14px; font-weight: 600; color: #0A52A0; margin-bottom: 6px; }
   .page-sub { text-align: center; font-size: 12px; color: #6a82a0; margin-bottom: 2rem; line-height: 1.6; }
-  .grid { display: flex; flex-wrap: wrap; gap: 32px; justify-content: center; align-items: flex-start; }
+  .grid { display: flex; flex-wrap: wrap; gap: 28px; justify-content: center; align-items: flex-start; }
   .col { display: flex; flex-direction: column; align-items: center; gap: 10px; }
-  .col-label { font-size: 11px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: #0A52A0; text-align: center; max-width: 240px; line-height: 1.5; }
-  .fc-panel { width: 240px; background: #f5f7fa; border-radius: 14px; overflow: hidden; border: 0.5px solid #c8ddf0; box-shadow: 0 4px 20px rgba(10,82,160,0.13); }
-  .fc-header { position: relative; height: 155px; overflow: hidden; }
-  .fc-header-photo { position: absolute; inset: 0; background-size: cover; filter: saturate(1.5) brightness(1.06) contrast(1.04); }
-  .fc-header-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.08) 45%, rgba(0,0,0,0.65) 100%); }
+  .col-label { font-size: 13px; font-weight: 700; color: #0A52A0; text-align: center; }
+  .fc-panel { width: 255px; background: #f5f7fa; border-radius: 14px; overflow: hidden; border: 0.5px solid #c8ddf0; box-shadow: 0 4px 20px rgba(10,82,160,0.13); }
+  .fc-header { position: relative; height: 165px; overflow: hidden; }
+  .fc-header-photo { position: absolute; inset: 0; background-size: cover; filter: saturate(1.5) brightness(1.08) contrast(1.04); }
+  .fc-header-overlay { position: absolute; inset: 0; }
   .fc-header-close { position: absolute; top: 8px; right: 8px; width: 22px; height: 22px; border-radius: 50%; background: rgba(255,255,255,0.26); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 11px; z-index: 3; }
-  .fc-header-content { position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; justify-content: flex-end; padding: 10px 12px 12px; }
-  .fc-header-title { font-size: 14px; font-weight: 700; color: #fff; margin: 0 0 3px; line-height: 1.25; text-shadow: 0 1px 5px rgba(0,0,0,0.6); }
-  .fc-header-sub { font-size: 10px; color: rgba(255,255,255,0.92); margin: 0; text-shadow: 0 1px 4px rgba(0,0,0,0.55); }
+  .fc-header-content { position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; padding: 10px 12px 12px; }
+  .fc-header-title { font-size: 15px; font-weight: 700; color: #fff; margin: 0 0 3px; line-height: 1.25; text-shadow: 0 1px 5px rgba(0,0,0,0.6); }
+  .fc-header-sub { font-size: 11px; color: rgba(255,255,255,0.92); margin: 0; text-shadow: 0 1px 4px rgba(0,0,0,0.55); }
   .fc-header-status { display: inline-flex; align-items: center; gap: 4px; background: rgba(0,0,0,0.28); border-radius: 20px; padding: 2px 8px 2px 5px; font-size: 9px; color: #fff; margin-top: 5px; }
   .fc-status-dot { width: 6px; height: 6px; border-radius: 50%; background: #4cd9a0; flex-shrink: 0; }
-  .fc-body { padding: 0 7px 7px; }
-  .fc-section { background: #fff; border-radius: 8px; border: 0.5px solid #dde8f5; margin-top: 7px; overflow: hidden; }
-  .fc-section-header { display: flex; align-items: center; justify-content: space-between; padding: 8px 10px 6px; font-size: 11px; font-weight: 600; color: #1a3a5c; }
-  .fc-section-header i { color: #8ab0cc; font-size: 13px; }
-  .fc-chat-row { display: flex; align-items: center; gap: 8px; padding: 7px 10px 9px; border-top: 0.5px solid #edf3fa; }
-  .fc-chat-icon { width: 28px; height: 28px; border-radius: 50%; background: #e6f1fb; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-  .fc-chat-icon i { color: #0A52A0; font-size: 14px; }
-  .fc-chat-label { font-size: 11px; color: #1a3a5c; font-weight: 500; }
-  .fc-chat-sub { font-size: 9px; color: #6a90b0; margin-top: 1px; }
-  .fc-faq-row { display: flex; align-items: center; gap: 8px; padding: 6px 10px; border-top: 0.5px solid #edf3fa; }
-  .fc-faq-icon-wrap { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .fc-body { padding: 0 8px 8px; }
+  .fc-section { background: #fff; border-radius: 8px; border: 0.5px solid #dde8f5; margin-top: 8px; overflow: hidden; }
+  .fc-section-header { display: flex; align-items: center; justify-content: space-between; padding: 9px 12px 7px; font-size: 12px; font-weight: 600; color: #1a3a5c; }
+  .fc-section-header i { color: #8ab0cc; font-size: 14px; }
+  .fc-chat-row { display: flex; align-items: center; gap: 10px; padding: 8px 12px 10px; border-top: 0.5px solid #edf3fa; cursor: pointer; }
+  /* Warm orange bubble — only here, nowhere else */
+  .fc-bubble-icon {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: linear-gradient(135deg, #D94F10 0%, #C23E0A 100%);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 2px 6px rgba(194,62,10,0.30);
+  }
+  .fc-chat-label { font-size: 12px; color: #1a3a5c; font-weight: 500; }
+  .fc-chat-sub { font-size: 10px; color: #6a90b0; margin-top: 1px; }
+  .fc-faq-row { display: flex; align-items: center; gap: 9px; padding: 7px 12px; border-top: 0.5px solid #edf3fa; cursor: pointer; }
+  .fc-faq-row:hover { background: #f5f9ff; }
+  .fc-faq-icon-wrap { width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
   .fc-faq-icon-wrap.navy { background: #0A52A0; }
   .fc-faq-icon-wrap.cyan { background: #00AEEF; }
-  .fc-faq-icon-wrap img { width: 16px; height: 16px; object-fit: contain; filter: brightness(0) invert(1); }
-  .fc-faq-label { font-size: 11px; color: #1a3a5c; }
-  .fc-show-more { padding: 6px 10px 8px; font-size: 10px; color: #0A52A0; font-weight: 500; border-top: 0.5px solid #edf3fa; }
+  .fc-faq-icon-wrap img { width: 17px; height: 17px; object-fit: contain; filter: brightness(0) invert(1); }
+  .fc-faq-label { font-size: 12px; color: #1a3a5c; }
+  .fc-show-more { padding: 7px 12px 9px; font-size: 11px; color: #0A52A0; font-weight: 500; border-top: 0.5px solid #edf3fa; }
   .fc-powered { text-align: center; font-size: 9px; color: #9ab4cc; padding: 6px 0 2px; }
-  .dev-notes { max-width: 860px; margin: 2rem auto 0; background: #fff; border-radius: 10px; border: 0.5px solid #dde8f5; padding: 14px 16px; font-size: 11px; color: #4a6a8a; line-height: 1.7; }
-  .dev-notes h4 { font-size: 11px; font-weight: 700; color: #0A52A0; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
-  .dev-notes code { background: #f0f4fa; padding: 1px 5px; border-radius: 3px; font-size: 10px; font-family: monospace; color: #0A52A0; }
 </style>
 </head>
 <body>
-  <p class="page-title">Thompsons For Travel — FreshChat Widget Options</p>
-  <p class="page-sub">Select your preferred header image. All other elements remain the same.</p>
+  <p class="page-title">Thompsons For Travel — FreshChat Widget Options — Version B</p>
+  <p class="page-sub">Six header options for Wendy to select from.</p>
   <div class="grid">
     <div class="col">
-      <p class="col-label">Current — balloons, Cappadocia</p>
+      <p class="col-label">Version B — Option 1</p>
       <div class="fc-panel">
         <div class="fc-header">
-          <div class="fc-header-photo" style="background-image:url('https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=800&q=90'); background-position:center 30%;"></div>
-          <div class="fc-header-overlay"></div>
+          <div class="fc-header-photo" style="background-image:url('https://images.unsplash.com/photo-1516589091380-5d8e87df6999?w=800&q=90'); background-position:center 35%;"></div>
+          <div class="fc-header-overlay" style="background: linear-gradient(to bottom, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.06) 45%, rgba(0,0,0,0.65) 100%);"></div>
           <div class="fc-header-close"><i class="ti ti-x"></i></div>
-          <div class="fc-header-content">
-            <p class="fc-header-title">🌍 Where will your next<br>adventure take you?</p>
+          <div class="fc-header-content" style="justify-content:flex-end;">
             <div>
+              <p class="fc-header-title">🌍 Where will your next<br>adventure take you?</p>
               <p class="fc-header-sub">Chat with us and let's find out!</p>
               <div class="fc-header-status"><div class="fc-status-dot"></div>Online now</div>
             </div>
@@ -68,8 +72,18 @@
           <div class="fc-section">
             <div class="fc-section-header">Message us</div>
             <div class="fc-chat-row">
-              <div class="fc-chat-icon"><i class="ti ti-message-circle"></i></div>
-              <div><div class="fc-chat-label">Chat with us</div><div class="fc-chat-sub">Typically replies in a few minutes</div></div>
+              <div class="fc-bubble-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" fill="white" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="8.5" cy="10" r="1" fill="#E8621A"/>
+                  <circle cx="12" cy="10" r="1" fill="#E8621A"/>
+                  <circle cx="15.5" cy="10" r="1" fill="#E8621A"/>
+                </svg>
+              </div>
+              <div>
+                <div class="fc-chat-label">Chat with us</div>
+                <div class="fc-chat-sub">Typically replies in a few minutes</div>
+              </div>
             </div>
           </div>
           <div class="fc-section">
@@ -86,15 +100,15 @@
       </div>
     </div>
     <div class="col">
-      <p class="col-label">Option A — golden sunset, couple on beach</p>
+      <p class="col-label">Version B — Option 2</p>
       <div class="fc-panel">
         <div class="fc-header">
-          <div class="fc-header-photo" style="background-image:url('https://images.unsplash.com/photo-1502791451862-7bd8c1df43a7?w=800&q=90'); background-position:center 40%;"></div>
-          <div class="fc-header-overlay"></div>
+          <div class="fc-header-photo" style="background-image:url('https://images.unsplash.com/photo-1490730141103-6cac27aaab94?w=800&q=90'); background-position:center 30%;"></div>
+          <div class="fc-header-overlay" style="background: linear-gradient(to bottom, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.06) 45%, rgba(0,0,0,0.65) 100%);"></div>
           <div class="fc-header-close"><i class="ti ti-x"></i></div>
-          <div class="fc-header-content">
-            <p class="fc-header-title">🌍 Where will your next<br>adventure take you?</p>
+          <div class="fc-header-content" style="justify-content:flex-end;">
             <div>
+              <p class="fc-header-title">🌍 Where will your next<br>adventure take you?</p>
               <p class="fc-header-sub">Chat with us and let's find out!</p>
               <div class="fc-header-status"><div class="fc-status-dot"></div>Online now</div>
             </div>
@@ -104,8 +118,18 @@
           <div class="fc-section">
             <div class="fc-section-header">Message us</div>
             <div class="fc-chat-row">
-              <div class="fc-chat-icon"><i class="ti ti-message-circle"></i></div>
-              <div><div class="fc-chat-label">Chat with us</div><div class="fc-chat-sub">Typically replies in a few minutes</div></div>
+              <div class="fc-bubble-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" fill="white" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="8.5" cy="10" r="1" fill="#E8621A"/>
+                  <circle cx="12" cy="10" r="1" fill="#E8621A"/>
+                  <circle cx="15.5" cy="10" r="1" fill="#E8621A"/>
+                </svg>
+              </div>
+              <div>
+                <div class="fc-chat-label">Chat with us</div>
+                <div class="fc-chat-sub">Typically replies in a few minutes</div>
+              </div>
             </div>
           </div>
           <div class="fc-section">
@@ -122,15 +146,15 @@
       </div>
     </div>
     <div class="col">
-      <p class="col-label">Option B — warm desert, camel ride</p>
+      <p class="col-label">Version B — Option 3</p>
       <div class="fc-panel">
         <div class="fc-header">
-          <div class="fc-header-photo" style="background-image:url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&q=90'); background-position:center 35%;"></div>
-          <div class="fc-header-overlay"></div>
+          <div class="fc-header-photo" style="background-image:url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=90'); background-position:center 30%;"></div>
+          <div class="fc-header-overlay" style="background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.10) 55%, rgba(0,0,0,0.0) 100%);"></div>
           <div class="fc-header-close"><i class="ti ti-x"></i></div>
-          <div class="fc-header-content">
-            <p class="fc-header-title">🌍 Where will your next<br>adventure take you?</p>
+          <div class="fc-header-content" style="justify-content:flex-start;">
             <div>
+              <p class="fc-header-title">🌍 Where will your next<br>adventure take you?</p>
               <p class="fc-header-sub">Chat with us and let's find out!</p>
               <div class="fc-header-status"><div class="fc-status-dot"></div>Online now</div>
             </div>
@@ -140,8 +164,18 @@
           <div class="fc-section">
             <div class="fc-section-header">Message us</div>
             <div class="fc-chat-row">
-              <div class="fc-chat-icon"><i class="ti ti-message-circle"></i></div>
-              <div><div class="fc-chat-label">Chat with us</div><div class="fc-chat-sub">Typically replies in a few minutes</div></div>
+              <div class="fc-bubble-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" fill="white" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="8.5" cy="10" r="1" fill="#E8621A"/>
+                  <circle cx="12" cy="10" r="1" fill="#E8621A"/>
+                  <circle cx="15.5" cy="10" r="1" fill="#E8621A"/>
+                </svg>
+              </div>
+              <div>
+                <div class="fc-chat-label">Chat with us</div>
+                <div class="fc-chat-sub">Typically replies in a few minutes</div>
+              </div>
             </div>
           </div>
           <div class="fc-section">
@@ -158,15 +192,15 @@
       </div>
     </div>
     <div class="col">
-      <p class="col-label">Option D — friends, golden hour road trip</p>
+      <p class="col-label">Version B — Option 4</p>
       <div class="fc-panel">
         <div class="fc-header">
-          <div class="fc-header-photo" style="background-image:url('https://images.unsplash.com/photo-1528543606781-2f6e6857f318?w=800&q=90'); background-position:center 35%;"></div>
-          <div class="fc-header-overlay"></div>
+          <div class="fc-header-photo" style="background-image:url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&q=90'); background-position:center 40%;"></div>
+          <div class="fc-header-overlay" style="background: linear-gradient(to bottom, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.06) 45%, rgba(0,0,0,0.65) 100%);"></div>
           <div class="fc-header-close"><i class="ti ti-x"></i></div>
-          <div class="fc-header-content">
-            <p class="fc-header-title">🌍 Where will your next<br>adventure take you?</p>
+          <div class="fc-header-content" style="justify-content:flex-end;">
             <div>
+              <p class="fc-header-title">🌍 Where will your next<br>adventure take you?</p>
               <p class="fc-header-sub">Chat with us and let's find out!</p>
               <div class="fc-header-status"><div class="fc-status-dot"></div>Online now</div>
             </div>
@@ -176,8 +210,110 @@
           <div class="fc-section">
             <div class="fc-section-header">Message us</div>
             <div class="fc-chat-row">
-              <div class="fc-chat-icon"><i class="ti ti-message-circle"></i></div>
-              <div><div class="fc-chat-label">Chat with us</div><div class="fc-chat-sub">Typically replies in a few minutes</div></div>
+              <div class="fc-bubble-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" fill="white" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="8.5" cy="10" r="1" fill="#E8621A"/>
+                  <circle cx="12" cy="10" r="1" fill="#E8621A"/>
+                  <circle cx="15.5" cy="10" r="1" fill="#E8621A"/>
+                </svg>
+              </div>
+              <div>
+                <div class="fc-chat-label">Chat with us</div>
+                <div class="fc-chat-sub">Typically replies in a few minutes</div>
+              </div>
+            </div>
+          </div>
+          <div class="fc-section">
+            <div class="fc-section-header">FAQs <i class="ti ti-search"></i></div>
+            <div class="fc-faq-row"><div class="fc-faq-icon-wrap navy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAMs0lEQVR42u2be3Bc1X3HP79z792HHrZlEz941AYzQOxpCyEtw9BWckopJU6A4F0bWcalIYQWCn8kKW3DdLVQhjTMZMijD+jELRgLvFeOTUoM0+nU0gSmZKjNo2OFEMfmZSxsLAlrtavdu+f8+sddyRZxErAtYas9MztanXMf53zP7/H9/X5nhSlvKiBKx6a5qO5CacR6i9h47ZvkcoZ83k3lbAz/x9v/A/CRvLU156N4R/R4tG7z6euTqZ6KP/WrF6WXGpnCEElPUYVRhuhdVvso9kKm9l0KmTAgMH+FF1yIi64AfMR7GrWvkhy6m3U3Fces5fRSgVwutv7GX0wi3YmfvIZEUwOJpgR+8rOkW75MNPsTgJIpmOmnAn1LhdZtPvJuQG3U4nQE5NuIqwG3gs7CuoDWbT4trwpgp5sKxG31+jMxTW9ibT9dKxbEfeEuUjMWU37vk3Rlt08zG1AnPqvXn4lpvgJbPR3j34Ozw4h+Faiici9Bag61yt/hp35KrfZfbLimb/zeU1oFMqEhxOKCi5i14LuUD8HoEBi/mYaWb4FAeRCiMiSb76RpHgzs/gugj9Yej15qpzYAS3bGO6jeWwy/8wS16ny84BJsNMzIgZ66rl+Kn55HdWQ7xf63MOwEYO4BZfo0jdXt+sIqbu5V2sMfHLYL4b9wyzPK6u47pi8Ruvghn3MKDpGPIwaQfjKFMTb4Oqqg+ltkCh67Bw3bvxhNLx5wTosjzFpEzqv37CLMWsKsReU11IIwlzBrWf62nX4SUMg4BFDm42pg3BvjY87tpVYBWMTNDwbkvxjVPZROEwlQQUT5861J0EXURkF46/CwfZ1qUVHmM7xg5hQy4SkCYGwt/cUW0LlUSw5r3jw8CzeA00N4QTMyGpOjXKdMHwA664Qr4Z2On2pA9SAj3kAMjgqPtR9E2EOiERxnjFPnaQNAXxgvxrKARCPAazxx7RCoxOCIovTjJcDjTAD2f2waATC2GF/Pxvgg2j8u5j099TnobowHyAXTNyPk9FyMB8rPAOhpO/L9b6AKsGAqWeDUAHB4MWegCiKHDSA99Zno69gIVBYDEGbc9AEgzMbERuRsbAWQPeOLn7s0Bsf6u2P36OaTKSTiKFBlGgBQX0SmkEZ1PtEoqI1J0NylOh4siXuXqByBN48U86fKFU4+AGOLMP7piDeXaHQUa/ePs8N8ZwxAMPw26t4hSKZA5k6VK5x8AMYWEdjTCFIBaD/Oe+dwOkYUEB6+cRSRfvw0qCyMvcfOaQDAmAt0upggBSL7CLPVCdme8SSo7sFLgGNR/H/bNHKDxjsLE4CyezxT9H6QlL2IAHrW9OMBykJEQN2+X8j0xPwUZwHOjQWgzZ36ALT1uHrEtxhnQXjlF/IEp69hI5C6F8jLKR8OC/lOJZcziMzDVkHNWxMI0AQp0X1EI6Asov3JFkDRyeUCkwvAWDWob+kclLOpFsGTvYDUCZAAUucCAom3qVVKiMzGVmcDQmfnKQzA2GGHZHImxmvG1oao2DcBrbNDBbR+nXL+jgMg+0g0CaZ25hFjkyiik9EyBY8wa1kdriXRdAfVYhrxLsC5UURfQTn6okQUOB/jNeFquwkaDxEVu9mQvXf8mSe4TU5OcMzCiywi3XIRtTJYqwSpFH7qwl96r61CVFLEnEO6BaKRvsnMD0wOAL1tNpYu9wgj+1/C1v6JRPM8otJ9VCu9qEviefZ9obIBqoj8On7yfmylyPA7t0DwAqjQy5Rlik+cGgCsCi9i7ZOWjk0D/MmW5g907+pwF5//d2VN91UAtG6btOz15KfFPW4lNdNQ7H+SddcNc+XWJHNKt+MFF1CrRvVAKcDZvaT8+1l3dRE2deOn7mT00G3AVtraHL2nFAAqhGLJFGaiLCcaASchIMwpX0Si8euYANKzQSQujBoPht99AdiCM9+jNPgVRNpo715IXl6frCN0k+MGW3s8QEjIH5KeNY/R4T2MDPXEbs99Ci9pGR16geF9nQz35ygP/hClhpE/AFFqte3Y6HkaZqdBP3eU9NlJDkBMbRXV6/GTCmzm+zcN193u5RjPw7GOrmyeDSvuxphvgPqgbVy5NVl3d2G9OLQyNoJt9tQAIJczMQdYfybGu5zyEIgNY+O26QxUfpvyoOLJD2nd5tO6zcckn6c8OIKXOJ/TynFW2EZbKA2U8VOfZFX3hSB6RDH1JAUglzP0LfVj7p++hvTsJqLKS1TNDnJqULmU9KxGbPUnvJt+hbkHlDbg7P/eh/I86RaD2mXk1HDBK3twtpf0LA9Ddtyk5nLm5DWCsZGqxrvdvRIR8OS7PJaJ+9q7r8BPgZgnefqqykTXt+kJRNqAK8jLA/W+h6hVrkS4DvjrOJFyMlPhjifOxffTVMqL8Uw34NDaSjTYBVECkQKJprOpFL8E/n/gan7dDdbQ6CKC1L9iK0PA1ag/BPY00C0EqRlElZvwg+dRG7H+cz8+uQDIqSEvjtXhM6RmXUZlGNTFLk484gMRxH1H9k/wnGNjJnaJ8YEJUAvqFDFCkIbqyC42rDivHkgddwn9RPOAAWx1EHXNiPFx7hBSsxPnKOBUkJoedS/UgqsdURMQg5iZqFpsVAQOnJwqEFvoBAHfoWHOjZQHtyPyaSq2RhApQYMSleoZ4oaj79qR41FJKKUNQU1JeOtpaLmKkXe3ErGSJTtLJ4oUnUAVQLlh8zmovISXbMSWPs36FVtPyPNXb/oEnv8jELDR77LhuudOVHh8YlSgLxTIOmqFe2ia10hx/3/SldkaT/J9Nb5MaGgZjI3CT86LJeH8V+ONGGxxP3d9a4/HhmU7aN+4kab5qym+cx+wjCWZk+QI3Rg5Wbv5YtZsiVjzfcva7ssmjI1xhA9CZHJqJvj6nBpQYc33zqNj8wh//AOlPVz+c8//yI1gFN1N0zyf4v7NrM88O0FEMwWPfP17e/dCjLcM5VKw81AVxDuIeM8htoe8vDohq5QXR6bgsT77Ku3hOoKW26iWOmnd9jRLjj9t7h/37odZS0fhU3jpP6I8WMXROcG2jF2TefjXSM64C3QV6ZnNcZHEjRt6nL2R8kCFNZs3w+jdrM/+ePzeJTtjr+CHX6N0sIPUjIs568BK8rKB1pxPb/6Yj9Oa4zKgSzLxxJzkSTYLtrKBxzMvkynE8cDYAtrD5aRnPUd61hfwgmZKA9sZ7v8Gxf1/SnH/zRT776N04BnEJEnNWoWkn+P6x28Yf0Y+72jt8XgkuxfVb+MF4PgbMoU0bbjjKaP7x7H7hrxYVheuJdH8O5QGi+D9LaiwpFMPJ0YLn8UkNhGkfcqDO3D2LrpWPH3UU+Brn7iM8uA9JBqXIf7DtG9M0pX95/hZbRZUiMIHGBm4ifTs89Chz5PPf4dW/GM9VG2Offd3Kjc/GKB04qfARQ/RtWL3eM0vzDg6Cuci/vp48Yc2Q/H36Mo8NZ7mOvKTyxkevvpZFr90OaPDD2I88JL/SEd4SSwJoYlPnmcHQO+PKwr6l9xcmHk8UnBsALTmYrEcmb2G1KzfoHTwIAH3x7u/U4nNgOK4n3TLDEbfe47IreLRG0bi/J4ovctqEz75fGzs8p1K14pbqBT/jeQMD6ffJFPwWLJTCTOOXM5gyg9RGvwZjbPPYERuj1Wk05sqAIQ2HB2PNKL61Zi3uwd4ONsfT6IT8uLoePw38ZKfoTJcQeythNkqrdv8X/rrsLGdBoj0NkaHhkg0XULC//0YoNDQt1R49IYRjN6LtYC5g7WF+fR2WvjwobI5Bt0PyOcdLnULDXPOoTzwNjT8Pa3bfOYuVfpCPzaMXoaGFo/aaA8bVu0gU/A+0E/jwqyldZtPmH0DZzeTbFZwq8bzAQAXPxjQ0tRF5b3/oXHOHKp6Z5wwWep/WHb74Y1gmK2SKcxEvC/jaorTu3hs+eCRpY34T/dn4kqvrPvQhY2xarHqOqrFG1G9kiu/mSTMVsbfsR3o2PQlqqWn8BNfoKPwLR7N7pmsWCAOO1dvnUFQWUhkbyI143bK772N6rUIVYyn1JzB+DWk9nHEfxy1FfzgWsTtZOGLe8nn9VeHr3VjtuqxBfgzFuHKW0g0foxK6c8Q7xlczce3DmcEJw6jXaRnL2V0cCNBw71U9S26lg9+0FDZfGCXB6ClC9HgZcS7ndFDisg8PP9HmOAFMC/i+zswvIwJNqJOUDy81FNE+vW6kfvV72vt8eLfFya+QiLxLCIziUqK7/0Dhpfx/R2QfBEveAHffwkxFzA6qIi3EvFexlXaJsz5hKqAqKJWcdYheCBenc1NRFoVEEGQeFyPgbKqq9/rgUicIzhCYHVMMuuZFeci1PqIfqgg6X8BROqy9TYb5VsAAAAASUVORK5CYII=" alt="" /></div><span class="fc-faq-label">Destinations and packages</span></div>
+            <div class="fc-faq-row"><div class="fc-faq-icon-wrap cyan"><img src="data:image/png;base64,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" alt="" /></div><span class="fc-faq-label">Booking and pricing</span></div>
+            <div class="fc-faq-row"><div class="fc-faq-icon-wrap navy"><img src="data:image/png;base64,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" alt="" /></div><span class="fc-faq-label">Passports and visas</span></div>
+            <div class="fc-faq-row"><div class="fc-faq-icon-wrap cyan"><img src="data:image/png;base64,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" alt="" /></div><span class="fc-faq-label">Insurance and emergencies</span></div>
+            <div class="fc-faq-row"><div class="fc-faq-icon-wrap navy"><img src="data:image/png;base64,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" alt="" /></div><span class="fc-faq-label">Why book with us</span></div>
+            <div class="fc-show-more">Show more categories</div>
+          </div>
+          <div class="fc-powered">Powered by Freshchat</div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <p class="col-label">Version B — Option 5</p>
+      <div class="fc-panel">
+        <div class="fc-header">
+          <div class="fc-header-photo" style="background-image:url('https://images.unsplash.com/photo-1503220317375-aaad61436b1b?w=800&q=90'); background-position:center 35%;"></div>
+          <div class="fc-header-overlay" style="background: linear-gradient(to bottom, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.06) 45%, rgba(0,0,0,0.65) 100%);"></div>
+          <div class="fc-header-close"><i class="ti ti-x"></i></div>
+          <div class="fc-header-content" style="justify-content:flex-end;">
+            <div>
+              <p class="fc-header-title">🌍 Where will your next<br>adventure take you?</p>
+              <p class="fc-header-sub">Chat with us and let's find out!</p>
+              <div class="fc-header-status"><div class="fc-status-dot"></div>Online now</div>
+            </div>
+          </div>
+        </div>
+        <div class="fc-body">
+          <div class="fc-section">
+            <div class="fc-section-header">Message us</div>
+            <div class="fc-chat-row">
+              <div class="fc-bubble-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" fill="white" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="8.5" cy="10" r="1" fill="#E8621A"/>
+                  <circle cx="12" cy="10" r="1" fill="#E8621A"/>
+                  <circle cx="15.5" cy="10" r="1" fill="#E8621A"/>
+                </svg>
+              </div>
+              <div>
+                <div class="fc-chat-label">Chat with us</div>
+                <div class="fc-chat-sub">Typically replies in a few minutes</div>
+              </div>
+            </div>
+          </div>
+          <div class="fc-section">
+            <div class="fc-section-header">FAQs <i class="ti ti-search"></i></div>
+            <div class="fc-faq-row"><div class="fc-faq-icon-wrap navy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAMs0lEQVR42u2be3Bc1X3HP79z792HHrZlEz941AYzQOxpCyEtw9BWckopJU6A4F0bWcalIYQWCn8kKW3DdLVQhjTMZMijD+jELRgLvFeOTUoM0+nU0gSmZKjNo2OFEMfmZSxsLAlrtavdu+f8+sddyRZxErAtYas9MztanXMf53zP7/H9/X5nhSlvKiBKx6a5qO5CacR6i9h47ZvkcoZ83k3lbAz/x9v/A/CRvLU156N4R/R4tG7z6euTqZ6KP/WrF6WXGpnCEElPUYVRhuhdVvso9kKm9l0KmTAgMH+FF1yIi64AfMR7GrWvkhy6m3U3Fces5fRSgVwutv7GX0wi3YmfvIZEUwOJpgR+8rOkW75MNPsTgJIpmOmnAn1LhdZtPvJuQG3U4nQE5NuIqwG3gs7CuoDWbT4trwpgp5sKxG31+jMxTW9ibT9dKxbEfeEuUjMWU37vk3Rlt08zG1AnPqvXn4lpvgJbPR3j34Ozw4h+Faiici9Bag61yt/hp35KrfZfbLimb/zeU1oFMqEhxOKCi5i14LuUD8HoEBi/mYaWb4FAeRCiMiSb76RpHgzs/gugj9Yej15qpzYAS3bGO6jeWwy/8wS16ny84BJsNMzIgZ66rl+Kn55HdWQ7xf63MOwEYO4BZfo0jdXt+sIqbu5V2sMfHLYL4b9wyzPK6u47pi8Ruvghn3MKDpGPIwaQfjKFMTb4Oqqg+ltkCh67Bw3bvxhNLx5wTosjzFpEzqv37CLMWsKsReU11IIwlzBrWf62nX4SUMg4BFDm42pg3BvjY87tpVYBWMTNDwbkvxjVPZROEwlQQUT5861J0EXURkF46/CwfZ1qUVHmM7xg5hQy4SkCYGwt/cUW0LlUSw5r3jw8CzeA00N4QTMyGpOjXKdMHwA664Qr4Z2On2pA9SAj3kAMjgqPtR9E2EOiERxnjFPnaQNAXxgvxrKARCPAazxx7RCoxOCIovTjJcDjTAD2f2waATC2GF/Pxvgg2j8u5j099TnobowHyAXTNyPk9FyMB8rPAOhpO/L9b6AKsGAqWeDUAHB4MWegCiKHDSA99Zno69gIVBYDEGbc9AEgzMbERuRsbAWQPeOLn7s0Bsf6u2P36OaTKSTiKFBlGgBQX0SmkEZ1PtEoqI1J0NylOh4siXuXqByBN48U86fKFU4+AGOLMP7piDeXaHQUa/ePs8N8ZwxAMPw26t4hSKZA5k6VK5x8AMYWEdjTCFIBaD/Oe+dwOkYUEB6+cRSRfvw0qCyMvcfOaQDAmAt0upggBSL7CLPVCdme8SSo7sFLgGNR/H/bNHKDxjsLE4CyezxT9H6QlL2IAHrW9OMBykJEQN2+X8j0xPwUZwHOjQWgzZ36ALT1uHrEtxhnQXjlF/IEp69hI5C6F8jLKR8OC/lOJZcziMzDVkHNWxMI0AQp0X1EI6Asov3JFkDRyeUCkwvAWDWob+kclLOpFsGTvYDUCZAAUucCAom3qVVKiMzGVmcDQmfnKQzA2GGHZHImxmvG1oao2DcBrbNDBbR+nXL+jgMg+0g0CaZ25hFjkyiik9EyBY8wa1kdriXRdAfVYhrxLsC5UURfQTn6okQUOB/jNeFquwkaDxEVu9mQvXf8mSe4TU5OcMzCiywi3XIRtTJYqwSpFH7qwl96r61CVFLEnEO6BaKRvsnMD0wOAL1tNpYu9wgj+1/C1v6JRPM8otJ9VCu9qEviefZ9obIBqoj8On7yfmylyPA7t0DwAqjQy5Rlik+cGgCsCi9i7ZOWjk0D/MmW5g907+pwF5//d2VN91UAtG6btOz15KfFPW4lNdNQ7H+SddcNc+XWJHNKt+MFF1CrRvVAKcDZvaT8+1l3dRE2deOn7mT00G3AVtraHL2nFAAqhGLJFGaiLCcaASchIMwpX0Si8euYANKzQSQujBoPht99AdiCM9+jNPgVRNpo715IXl6frCN0k+MGW3s8QEjIH5KeNY/R4T2MDPXEbs99Ci9pGR16geF9nQz35ygP/hClhpE/AFFqte3Y6HkaZqdBP3eU9NlJDkBMbRXV6/GTCmzm+zcN193u5RjPw7GOrmyeDSvuxphvgPqgbVy5NVl3d2G9OLQyNoJt9tQAIJczMQdYfybGu5zyEIgNY+O26QxUfpvyoOLJD2nd5tO6zcckn6c8OIKXOJ/TynFW2EZbKA2U8VOfZFX3hSB6RDH1JAUglzP0LfVj7p++hvTsJqLKS1TNDnJqULmU9KxGbPUnvJt+hbkHlDbg7P/eh/I86RaD2mXk1HDBK3twtpf0LA9Ddtyk5nLm5DWCsZGqxrvdvRIR8OS7PJaJ+9q7r8BPgZgnefqqykTXt+kJRNqAK8jLA/W+h6hVrkS4DvjrOJFyMlPhjifOxffTVMqL8Uw34NDaSjTYBVECkQKJprOpFL8E/n/gan7dDdbQ6CKC1L9iK0PA1ag/BPY00C0EqRlElZvwg+dRG7H+cz8+uQDIqSEvjtXhM6RmXUZlGNTFLk484gMRxH1H9k/wnGNjJnaJ8YEJUAvqFDFCkIbqyC42rDivHkgddwn9RPOAAWx1EHXNiPFx7hBSsxPnKOBUkJoedS/UgqsdURMQg5iZqFpsVAQOnJwqEFvoBAHfoWHOjZQHtyPyaSq2RhApQYMSleoZ4oaj79qR41FJKKUNQU1JeOtpaLmKkXe3ErGSJTtLJ4oUnUAVQLlh8zmovISXbMSWPs36FVtPyPNXb/oEnv8jELDR77LhuudOVHh8YlSgLxTIOmqFe2ia10hx/3/SldkaT/J9Nb5MaGgZjI3CT86LJeH8V+ONGGxxP3d9a4/HhmU7aN+4kab5qym+cx+wjCWZk+QI3Rg5Wbv5YtZsiVjzfcva7ssmjI1xhA9CZHJqJvj6nBpQYc33zqNj8wh//AOlPVz+c8//yI1gFN1N0zyf4v7NrM88O0FEMwWPfP17e/dCjLcM5VKw81AVxDuIeM8htoe8vDohq5QXR6bgsT77Ku3hOoKW26iWOmnd9jRLjj9t7h/37odZS0fhU3jpP6I8WMXROcG2jF2TefjXSM64C3QV6ZnNcZHEjRt6nL2R8kCFNZs3w+jdrM/+ePzeJTtjr+CHX6N0sIPUjIs568BK8rKB1pxPb/6Yj9Oa4zKgSzLxxJzkSTYLtrKBxzMvkynE8cDYAtrD5aRnPUd61hfwgmZKA9sZ7v8Gxf1/SnH/zRT776N04BnEJEnNWoWkn+P6x28Yf0Y+72jt8XgkuxfVb+MF4PgbMoU0bbjjKaP7x7H7hrxYVheuJdH8O5QGi+D9LaiwpFMPJ0YLn8UkNhGkfcqDO3D2LrpWPH3UU+Brn7iM8uA9JBqXIf7DtG9M0pX95/hZbRZUiMIHGBm4ifTs89Chz5PPf4dW/GM9VG2Offd3Kjc/GKB04qfARQ/RtWL3eM0vzDg6Cuci/vp48Yc2Q/H36Mo8NZ7mOvKTyxkevvpZFr90OaPDD2I88JL/SEd4SSwJoYlPnmcHQO+PKwr6l9xcmHk8UnBsALTmYrEcmb2G1KzfoHTwIAH3x7u/U4nNgOK4n3TLDEbfe47IreLRG0bi/J4ovctqEz75fGzs8p1K14pbqBT/jeQMD6ffJFPwWLJTCTOOXM5gyg9RGvwZjbPPYERuj1Wk05sqAIQ2HB2PNKL61Zi3uwd4ONsfT6IT8uLoePw38ZKfoTJcQeythNkqrdv8X/rrsLGdBoj0NkaHhkg0XULC//0YoNDQt1R49IYRjN6LtYC5g7WF+fR2WvjwobI5Bt0PyOcdLnULDXPOoTzwNjT8Pa3bfOYuVfpCPzaMXoaGFo/aaA8bVu0gU/A+0E/jwqyldZtPmH0DZzeTbFZwq8bzAQAXPxjQ0tRF5b3/oXHOHKp6Z5wwWep/WHb74Y1gmK2SKcxEvC/jaorTu3hs+eCRpY34T/dn4kqvrPvQhY2xarHqOqrFG1G9kiu/mSTMVsbfsR3o2PQlqqWn8BNfoKPwLR7N7pmsWCAOO1dvnUFQWUhkbyI143bK772N6rUIVYyn1JzB+DWk9nHEfxy1FfzgWsTtZOGLe8nn9VeHr3VjtuqxBfgzFuHKW0g0foxK6c8Q7xlczce3DmcEJw6jXaRnL2V0cCNBw71U9S26lg9+0FDZfGCXB6ClC9HgZcS7ndFDisg8PP9HmOAFMC/i+zswvIwJNqJOUDy81FNE+vW6kfvV72vt8eLfFya+QiLxLCIziUqK7/0Dhpfx/R2QfBEveAHffwkxFzA6qIi3EvFexlXaJsz5hKqAqKJWcdYheCBenc1NRFoVEEGQeFyPgbKqq9/rgUicIzhCYHVMMuuZFeci1PqIfqgg6X8BROqy9TYb5VsAAAAASUVORK5CYII=" alt="" /></div><span class="fc-faq-label">Destinations and packages</span></div>
+            <div class="fc-faq-row"><div class="fc-faq-icon-wrap cyan"><img src="data:image/png;base64,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" alt="" /></div><span class="fc-faq-label">Booking and pricing</span></div>
+            <div class="fc-faq-row"><div class="fc-faq-icon-wrap navy"><img src="data:image/png;base64,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" alt="" /></div><span class="fc-faq-label">Passports and visas</span></div>
+            <div class="fc-faq-row"><div class="fc-faq-icon-wrap cyan"><img src="data:image/png;base64,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" alt="" /></div><span class="fc-faq-label">Insurance and emergencies</span></div>
+            <div class="fc-faq-row"><div class="fc-faq-icon-wrap navy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAANT0lEQVR42u1bfWwV15X/nXtn3nvznv0AB8xuGkJKG6iABLqpGrG70TMt7aJsW7DJuJsQ852QSl1FXe0fq7DbYaQm/afazX50twQbm4UmynvUpmmi0lUl7N1st6qaqqWFJm0DJCqEL9tg+828j7n37B8zfjyDAX9gQlQfaaSnmbnnnHu+z7nzgGmYhmmYhmmYhmmYhskBAUy3jhxTSHMabobmJqsJQu3avXWB4CwJeSdUQKAp0g6DIQ1mrU4bmpoHD27sAxgA8URRGpNiyM4J5KA0qWUiPvNTXMoDRFOrLgZEPP0xXRy4H8Bh2DmJHNT7I4BzRwkAKRZzpRFXKAy0wWCHQZLA6uYqP8IZKBdGfKsqiLkAKOIB748A6pcIAAERz4aQkgk/93Obz0ylz1pNHT8nISWRng2AIx7eBwHYWYlccyk0TfFJqDKIsRxwBB64U+KN0ze2AHtJqL3c0Rv7cISTGMuhygDoQQD/hlxzKeJF3ToBZBwDuebAanzhLsjkLgIeRikPBvoAV2NBlvDGdn1DPLlx0IxwMjr6qJQHCfm49ci+Oih/u59r/j0yjoEeNxjvVsSENt/jBom1rStIJn8k4rUPQ5U1swIYXePI40g0tc5PNLXOr743hmDQxawAVdYinn6YZPJHiTW7/hQ9boCMY0ytAOysRI8bpNa0flqYif+ieHoe+/3fBOh/SZggk0OXWGxf36SdnRQGdfldYvFK9b1rQoSTJJVJmgDwOud7v0nx9DwRq/lBak3rp9HjBrCzcmoEEPlZcm3HA2xaXWQka7R34Vmvc9OXw1zMkDD88OWd19m8I+C6Ota0516CWEokl8Sa9twL19VwnOvwE+KUQnjMoXy9g1u+rL3er5Fh1bCZ7Eyu3f0Acs1qPEIQYzbZxUc5bWfrIClL8Zpa7V96zu/a8veAI0CUZK1QKqtg1OztsIDjhNexJQbAJFisIdOSZFpSsFgDMOHYEqPynsNitEKtVFYBtAIISTiO8Ls2/4P2Lz1H8VQaMpZN29k6LD7KY3WpsfmMnRNwXVVe2/a8qP3jBZw/c8A/uGUHntxl4oXtZXB7qBKheFSvdUdUaqVQKu0tXM7/JKpvWgD6BnLhsxDca6jM5Agr4LoaT+4y/Rc270g2tS+k1NxHyoPvPQ/X3QB7yZgKJGOspp9Yt+8hYSZa2Os9JbV8CnAE+mdFkZ4UQIA0xRVlMtc8+u3ZqlB6iUiaYCWYqBZgQ6bmLtVD57YAgKyp32M1tf8SoICYB0FSM6uyTMQeHXpp/YUQ185o30UJsgBEm+ufpQFHSC2eUl7vChFPtyTW7dldyDX/z1jS441dYHGYo0mXvwrDAoKSM3hwYy8yDWL4GcAlEgJmsRy70nVE4GkA9ZS6IwPTeohYlwB5Wvv9naJc/J4oF7+n/f5OQJ4m5iLMxEOUuiMD0Nxw7UhTjkk2iQQAFCv8ZRrE4MGNveDAgWmBNL5azfvEBeCwgOvqlL3nPjKTqzh//oRXHNoPxxHoaVA4FhYyTBiCMKBMTgJAeD80+4HcE31+18mPa7/3OQJpGImiVvnt3oH164ZefbJ36NXtvd6B9esYpSdhxEoEobXX93X//hPLB3JP9EUWxsO0lDaSEAYYGKrQ6mlQcBzheQP7OX/+BJnJVak1e+4LAyuLiQugu1sAgA5oHSVmMIB2HHq6iO4GUd2BEVM/hAGhY+kr4l8UjFz2D2zYweXBLwC0SJrpX9eu3bswwsG1a/cuFMJ6EyQWcXnwC/53Wp6B6/KwG41gONAzIEwQcHEEne4GgUNPFwHRTokZrAWtq97DxATQ06AAgIj+AqUhghCvAiDUnw+ZOjeHIvpnIQwo4jlVTVKVEADY2ZjXte01lL0uMMtB03o71rTn3tjaFxYOmtbbYJYo5Q96Xdteg52NjVhbhVMJzIGQ0ISzI3gIeSJAvYbSEBHRZ6v3MAEBhNJP27vrwFimC4PnvBr9awCMXPOIMlcDp0ACEvqu8E7DKGVvcwl21mIh17MuvZwK8n9lGqnfmPEZb6XKg4+yLr/MwngMn9uVrPQYIyDEKQkfQhgDTl2BXwNgL03HdGnwHBjL0/buustWOF4B2DkBAEEQn0fxlAWSR7F3cyEqViLNdA+36SfBGgxaUH2/KpMIAEgFhRUkYymQWIVk3X4OijkuF7JIzd4HEqtIxlIpGVtRvabKH0O1MD4C1iHNkbQYjiOwd3OBWByjeMoKgvi86r1MLAtQ8EeQCYD43YieqGqHowxBJ1H2wcCiSFl6lLkBNKmNIp4mIpni0qVtXueGZq9z4xe5MLCVSKREPE1aYsPVbnQZJxMtQtkHMZ+o5qGaNyZ+FzIOCD134lkgYoBZ1EIIENB/lXnnbA0Ahlk+wcUhH1rfh0x7Aq47Mn1FzBMoposDhxWXlnu5DW2wsxJ2VnrfadmjuLRcFwcOEyh2tRCZ4LoamfYEtF7KxUHfMNTJah6qeSNGP4QEa6RHFeZ4CiEmkgAxM1S4qe6rovxAjvqtxvY3RSz58ZoZ+QVDwDE4Owlu5CquqwHA69z4WCWwRS318O9i59bjAD4V0thUWVNplFxwTb2xgClWrwPvZwO5J/pHyxIAE2NvQCAOeZ+oBUSmJVn1QZeJoOcBxLCOSNhZiYxjIHPYwOrvx8KYwD9EIg1tiE8CoDBVXuVPYUByHDGid+9xgzC2jLYhIMJFOig9iEQtwPRDAIzV348hc9hAxjFgZyWsIxIgJqi7ocskWfVd5SZjtoBh0wrUEfYv+ZDxz8Sb2hZEmqqu1wPY2ZhQ/hkopZnxWQAdlVQ5mhCGLaMaXFdfs/4PcTGT+AwppQXRWdjZGHIPF694U8Wb2hZAWKvYv+hToI5c7SbjGYsPt8BN7f8oUnO/or3z74D1txh4EyQEs7pHQP4JiP+cZGI+g8Fl/7zlmx/tO9QycE2Njn/0znXr96V9r/w7Mq05BAKrwjtgel1D/YxIngRrTcDHAPqSSNXfrQfP/pN3cPPf3KgfuH4MyNkajiO8k3jGGjg7R8RrHkcs9XXSkUCFBHQA9vuhA78HjNkiMXOJLwZXAngFmZ0SPQgmtf8Qh/ILeqVIzJyjC5eOMtF5ItFAyVnzpTDWQ0f7EwIo5aGGzu73Z+CZcPZg60l0gxVzLfhAS8Le++/CL2Wgg7vDbox+D4ijyjB/VXx5w0mrseMRyFiOtNoE4LvX871xTJ4ZAJNWmyBjAGin37npQPyLL90j/UtLAb0E4LsASAjjXY2gp9C1+f9u2FaP+0jiutOacNJTt35f2mrqOJNsfrEYt//zwxU3mszkGUC8qW1BsvnFotXUcaZu9b70WHgZ66nXWIeIDNdl2FkZ1t7dl/Nu/XlG7iiju0H09awcsBo7Wik+c4cYOvssgMeQs/WExtZ2Vg6PywWLr1F8ZozLZ3f3HWoZgH/YqIzVR+PHHTutm3eO5TgCLpC076mHEm+QNfNOXbjY5l84/lQ4sT1soKFbj8jv18LT3SDQszJAxjGs2Qu+JRIzt7J/8TSkfsDLnTwHB7ghnlsugKqBZ7KxbRlE7DWyZn2Ivb5u4tJf57u2/aoS1TM75Yj8PFyp9exUw1kj1di6lCn2r5Ssa2C//xR06S+9rq2/GKZxm5wOXzt1xtfu+oiUyX2UrFvBXl+RwP8iBLUN5lreut7yWnvfokDrLQR6mqw74uz3/lgp//Hiwe1vT+YE6NYJoEoIWP3PcSs5awcR/a1I3mFprxfQ+r+Z8DqR+g0reRFQIImZzHIhgf4MhAwlZ4O9Pp9Zf8P3+p/FoaeLU7H5qRNAlTsAQNze/VFDJ55goJliyXtgWGH1XBqKBn014bF62QeX8u8Q6OUyl1tLnVt+eyWuD44AhvHbWVHR3Mb2hDUklxFjGbNeSIQvRT3+f5Aw3mKII35N8RfYu7lQZUn68vzhgwqOI0Y7t7Oa2i9YTe0XRj1/vFGu/4BYwNV1faY7zADWkaRlzTgBAL5/6cPw7/cuz/DolmncuLUCIEYPhxv83K7LPYKRCNCzMrg5zdP4QOAPHP7gBSCn1N8dCPR0R4JuoPA6L4DFhPn1phnjrwBA4Meex/H7VeVZ5d1uXMbhfoDEOpYOMOMYVmNHr9XY0TumLzsm01W+H1mgbvW+dKE2ngTyIx8EBsEIWBXKljBiPwUAHZQ+IROmP/xs5IIUvOJAHq9sG0TlS8HbNQZEfbjV2PZcoVacgPJPQdFpKHqvcpE6DUXvSTN2nAyzjgyzTpqx49XPqq7TUP6pZNx6O9m45xkMH37clhYQfTyVamxfj2Tdfvb7PYDfAxOBmK8RJnSUHcW1ZvLhWppHiRkx7V9q8rs2dd3MvuCm1wEatEoIs0xabc8f3Lr/ZuBMNnZsgIy3gvjzALom+3XoFBdC/FOw3qRJ/J3V2L4KBAJP0G+jtUx8H0GbAjh6OwdBAhzC6gfNpHXu25SoXQdhRhQmQYYZ0AF08eIhX9bYyNn5SlV5G2aBSpS21r34CSEwC6rMYDVxOoYBDXnJz63/yZU0bleYyn9z0G2PcMoKlymYBk3DNEzDNPw/PxI+AX2evb4AAAAASUVORK5CYII=" alt="" /></div><span class="fc-faq-label">Why book with us</span></div>
+            <div class="fc-show-more">Show more categories</div>
+          </div>
+          <div class="fc-powered">Powered by Freshchat</div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <p class="col-label">Version B — Option 6</p>
+      <div class="fc-panel">
+        <div class="fc-header">
+          <div class="fc-header-photo" style="background-image:url('https://images.unsplash.com/photo-1539635278303-d4002c07eae3?w=800&q=90'); background-position:center 35%;"></div>
+          <div class="fc-header-overlay" style="background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.10) 55%, rgba(0,0,0,0.0) 100%);"></div>
+          <div class="fc-header-close"><i class="ti ti-x"></i></div>
+          <div class="fc-header-content" style="justify-content:flex-start;">
+            <div>
+              <p class="fc-header-title">🌍 Where will your next<br>adventure take you?</p>
+              <p class="fc-header-sub">Chat with us and let's find out!</p>
+              <div class="fc-header-status"><div class="fc-status-dot"></div>Online now</div>
+            </div>
+          </div>
+        </div>
+        <div class="fc-body">
+          <div class="fc-section">
+            <div class="fc-section-header">Message us</div>
+            <div class="fc-chat-row">
+              <div class="fc-bubble-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" fill="white" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="8.5" cy="10" r="1" fill="#E8621A"/>
+                  <circle cx="12" cy="10" r="1" fill="#E8621A"/>
+                  <circle cx="15.5" cy="10" r="1" fill="#E8621A"/>
+                </svg>
+              </div>
+              <div>
+                <div class="fc-chat-label">Chat with us</div>
+                <div class="fc-chat-sub">Typically replies in a few minutes</div>
+              </div>
             </div>
           </div>
           <div class="fc-section">
@@ -193,12 +329,5 @@
         </div>
       </div>
     </div></div>
-  <div class="dev-notes">
-    <h4>Developer Notes</h4>
-    <strong>To switch image:</strong> Replace the <code>background-image</code> URL in <code>.fc-header-photo</code> with the chosen option or approved Thompsons CDN image.<br>
-    <strong>FAQ icons:</strong> Transparent PNGs, white-inverted on navy/cyan circles via <code>filter: brightness(0) invert(1)</code>.<br>
-    <strong>Brand colours:</strong> Primary <code>#0A52A0</code> · Cyan <code>#00AEEF</code><br>
-    <strong>Image brief:</strong> Warm, bright, golden tones. People in frame. Joyful, celebratory travel energy.
-  </div>
 </body>
 </html>
